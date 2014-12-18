@@ -1,0 +1,20 @@
+<polymer-element name="app-globals" attributes="state">
+  <script>
+    (function() {
+      var state = {};
+      var constants = {};
+      
+      Polymer({
+         ready: function() {
+           this.state = state;
+           this.constants = constants;
+           
+           for (var i = 0; i < this.attributes.length; ++i) {
+             var attr = this.attributes[i];
+             state[attr.nodeName] = attr.value;
+           }
+         }
+      });
+    })();
+  </script>
+</polymer-element>
